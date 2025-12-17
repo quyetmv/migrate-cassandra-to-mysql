@@ -42,19 +42,19 @@ Key settings in `config.sh`:
 
 | Version | File | Use When |
 |---------|------|----------|
-| **PySpark** | `run_snapshot_v3.sh` | Large clusters, YARN/Mesos, distributed processing |
-| **Pure Python** | `run_pure_python.sh` | Single machine, no Spark, simpler setup |
+| **PySpark** | `run_snapshot_pyspark.sh` | Large clusters, YARN/Mesos, distributed processing |
+| **Only Python** | `run_only_python.sh` | Single machine, no Spark, simpler setup |
 
 #### Option A: PySpark Version (Distributed)
 ```bash
-chmod +x run_snapshot_v3.sh
-./run_snapshot_v3.sh
+chmod +x run_snapshot_pyspark.sh
+./run_snapshot_pyspark.sh
 ```
 
-#### Option B: Pure Python Version (No Spark)
+#### Option B: only Python Version (No Spark)
 ```bash
-chmod +x run_pure_python.sh
-./run_pure_python.sh
+chmod +x run_only_python.sh
+./run_only_python.sh
 ```
 
 ### 3. Verify Results
@@ -104,12 +104,12 @@ Expected output (when successful):
 
 | File                                  | Description                          |
 |---------------------------------------|--------------------------------------|
-| `snapshot_cassandra_persistent_v3.py` | Main PySpark job                     |
-| `snapshot_only_python.py`             | Pure Python version (no Spark)       |
+| `snapshot_use_pyspark.py`             | Main PySpark job                     |
+| `snapshot_only_python.py`             | only Python version (no Spark)       |
 | `config.sh`                           | Configuration (gitignored)           |
 | `config_example.sh`                   | Example configuration                |
-| `run_snapshot_v3.sh`                  | Runner for PySpark version           |
-| `run_only_python.sh`                  | Runner for pure Python version       |
+| `run_snapshot_pyspark.sh`             | Runner for PySpark version           |
+| `run_only_python.sh`                  | Runner for only Python version       |
 | `verify_missing_ids.sh`               | Diagnostic: find missing IDs         |
 | `find_missing_ids.py`                 | Diagnostic script                    |
 | `Dockerfile`                          | Container with Spark + Kerberos      |

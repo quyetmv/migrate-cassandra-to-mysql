@@ -25,8 +25,8 @@ echo "=============================================="
   --executor-cores ${EXECUTOR_CORES} \
   --executor-memory ${EXECUTOR_MEMORY} \
   --driver-memory ${DRIVER_MEMORY} \
-  --name "Snapshot_Cassandra_${TABLE}_v3" \
-  snapshot_cassandra_persistent_v3.py \
+  --name "Snapshot_Cassandra_${TABLE}" \
+  snapshot_use_pyspark.py \
   "${ARGS_CASSANDRA}" \
   "${ARGS_MYSQL}" \
   "${TABLE}" \
